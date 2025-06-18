@@ -1,0 +1,287 @@
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0; 
+      font-family: 'Inter', sans-serif;
+      line-height: 1.5;
+      background: #f9fafb;
+      color: #1f2937; /* Dark gray for readability */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a {
+      color: #059669; /* Emerald green */
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover, a:focus {
+      color: #065f46; /* Darker emerald */
+      outline: none;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 24px 16px;
+    }
+
+    /* Header */
+    header {
+      border-bottom: 2px solid #d1d5db;
+      padding-bottom: 24px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    header h1 {
+      font-weight: 800;
+      font-size: 2.75rem;
+      margin-bottom: 8px;
+      color: #065f46;
+    }
+    header p {
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: #10b981;
+      letter-spacing: 1.3px;
+      margin: 0;
+    }
+
+    /* Grid Layout */
+    main {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    @media (min-width: 768px) {
+      main {
+        grid-template-columns: repeat(12, 1fr);
+      }
+    }
+
+    /* About Section */
+    section.about {
+      grid-column: 1 / -1;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      color: #374151;
+    }
+    section.about h2 {
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 12px;
+      color: #047857;
+    }
+    section.about p {
+      font-size: 1rem;
+      margin-bottom: 12px;
+    }
+
+    /* Skills Section */
+    section.skills {
+      grid-column: 1 / -1;
+    }
+    @media (min-width: 768px) {
+      section.skills {
+        grid-column: 1 / 5;
+      }
+    }
+    section.skills h2 {
+      font-weight: 700;
+      font-size: 1.75rem;
+      margin-bottom: 16px;
+      color: #047857;
+    }
+    .skills-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(120px,1fr));
+      gap: 12px;
+    }
+    .skills-list li {
+      background: #d1fae5; /* Light mint */
+      color: #065f46;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 0.9rem;
+      box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
+    }
+
+    /* Education Section */
+    section.education {
+      grid-column: 1 / -1;
+      color: #374151;
+      line-height: 1.4;
+    }
+    @media (min-width: 768px) {
+      section.education {
+        grid-column: 1 / 5;
+      }
+    }
+    section.education h2 {
+      font-weight: 700;
+      font-size: 1.75rem;
+      margin-bottom: 16px;
+      color: #047857;
+    }
+    .education-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .education-list li {
+      margin-bottom: 16px;
+    }
+    .education-degree {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #065f46;
+    }
+    .education-institution {
+      font-size: 0.95rem;
+      font-style: italic;
+      color: #4b5563;
+      margin-top: 2px;
+    }
+    .education-year {
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+
+    /* Projects Section */
+    section.projects {
+      grid-column: 1 / -1;
+    }
+    @media (min-width: 768px) {
+      section.projects {
+        grid-column: 5 / 13;
+      }
+    }
+    section.projects h2 {
+      font-weight: 700;
+      font-size: 1.75rem;
+      margin-bottom: 24px;
+      color: #047857;
+    }
+    .projects-grid {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    }
+    .project-card {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.08);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: box-shadow 0.3s ease;
+    }
+    .project-card:hover {
+      box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
+    }
+    .project-image img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      aspect-ratio: 16 / 9;
+    }
+    .project-content {
+      padding: 16px 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #065f46;
+    }
+    .project-description {
+      flex-grow: 1;
+      font-size: 0.9rem;
+      color: #374151;
+      margin-bottom: 16px;
+    }
+    .project-links {
+      margin-top: auto;
+      display: flex;
+      gap: 12px;
+    }
+    .project-links a {
+      background: #10b981;
+      color: white;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background-color 0.3s ease;
+      justify-content: center;
+    }
+    .project-links a:hover, .project-links a:focus {
+      background-color: #047857;
+      outline: none;
+    }
+    .material-icons.icon {
+      font-size: 18px;
+    }
+
+    /* Contact Section */
+    section.contact {
+      grid-column: 1 / -1;
+      background: #059669;
+      color: white;
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: 0 6px 12px rgb(5 150 105 / 0.3);
+    }
+    section.contact h2 {
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 36px;
+      flex-wrap: wrap;
+      font-size: 1rem;
+    }
+    .contact-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+    }
+    .contact-list a {
+      color: white;
+      transition: color 0.3s ease;
+    }
+    .contact-list a:hover, .contact-list a:focus {
+      color: #a7f3d0;
+      outline: none;
+    }
+
+
+    /* Accessibility and Focus */
+    a:focus-visible {
+      outline: 3px solid #34d399;
+      outline-offset: 2px;
+    }
